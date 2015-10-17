@@ -3,27 +3,29 @@ using namespace std;
 
 long n;
 long fibonacci (long n){
-  long first=0, second=1, third=0;
+  long a=0, b=1, c=0;
   if(n==1){
-    third=1;
+    c=1;
   }
 
-for (int i=0; i<n-1; i++){
-  third=first+second;
-  first=second;
-  second=third;
+for (int i=0; i<n-1; i++)
+{
+  c=a+b;
+  a=b;
+  b=c;
 }
-  return third;
+  return c;
 }
-
 
 int main(){
   cout<<"Da un número positivo para la serie Fibonacci: ";
   cin>>n;
-    if (n>=0) {
+    if (n>=0)
+    {
       cout<<"Resultado: "<<fibonacci(n);
     }
-    else{
+    else
+    {
       cout<<"Invalid";
     }
   return 0;
