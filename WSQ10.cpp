@@ -6,13 +6,15 @@
 using namespace std;
 
 int main(){
-  cout<<"Ingresa 10 números, al terminar ingresa 00: "<<endl;
   vector <float> lista;
   float numero;
-  cin>>numero;
-  while(numero!=00){
-    lista.push_back(numero);
+  string seguir = "yes";
+  while(seguir == "yes"){
+    cout<<"Ingresa un numero: "<<endl;
     cin>>numero;
+    lista.push_back(numero);
+    cout << "Otro numero? ";
+    cin >> seguir;
   }
   float sum;
   float aver;
