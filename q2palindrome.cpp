@@ -12,7 +12,7 @@ bool isPalindrome(string x){
 
 int main(){
     string a;
-    cout << "Escribe una frase, palabra o número que pienses que es un Palíndromo/a: " << endl;
+    cout << "Escribe una frase, palabra o número que pienses que es Palíndromo/a: " << endl;
     cin>>a;
     bool y= isPalindrome(a);
         if (y == true) {
