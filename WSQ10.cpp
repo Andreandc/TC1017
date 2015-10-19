@@ -10,10 +10,11 @@ int main(){
   float numero;
   string seguir = "yes";
   while(seguir == "yes"){
-    cout<<"Ingresa un numero: "<<endl;
+    cout<<"Ingresa un número para dar suma, promedio y desviacón estándar: "<<endl;
     cin>>numero;
     lista.push_back(numero);
-    cout << "Otro numero? ";
+    cout << "¿Otro número? (yes/no)";
+    cout<<endl;
     cin >> seguir;
   }
   float sum;
@@ -33,7 +34,7 @@ int main(){
   cout<<aver<<endl;
 
   cout<<"La desviación estándar es: ";
-  for(p=0; p<lista.size(); p++)             //for para la desviacion
+  for(float p=0; p<lista.size(); p++)             //for para la desviacion
   var=var+pow((lista[p]-aver), 2);
   des=sqrt((var)/(lista.size()));
   cout<<des<<endl;
