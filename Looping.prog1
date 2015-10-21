@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+  int menor;
+  cout<<"Ingrese un número: ";
+  cin>>menor;
+  int mayor;
+  cout<<"Ingrese un número mayor al anterior: ";
+  cin>>mayor;
+  cout<<"Los números entre esos son: "<<endl;
+  for(int i=menor; i<=mayor; i++)
+  cout<<i<<endl;
+  return 0;
+}
