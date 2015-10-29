@@ -1,37 +1,33 @@
+#include "BigIntegerLibrary.hh"
 #include <iostream>
+#include <string>
 using namespace std;
 
-int factorial (int s){
-  int fact=1;
-  if(s==0){
-    return 0;}       //si el valor dado es '0' me regresará el valor de 0
-  else{
-    for(int i=1; i<=s; i++){    //ciclo for: inicia en 1(porque con 0 daría todo 0) y va hasta el numero ingresado aumentando de 1
-    fact=i*fact;               //cada numero dado por el for se irá multiplicando por el anterior(se iran generando los valores de 1 al
-  }                            //número ingresado)
-  return fact;
-}
-}
 
-int main(){
-  int x, y, n;
-  char a;
-  cout<<"Enter a positive integer to make it factorial:";
-  cin>>x;
-
-  if (x<0){cout<<"That is not positive, try again:";
-  cin>>x;}
-
-  if (x>=0){cout<<"The factorial of the number is:"<<factorial(x)<<endl;}
-
-  cout<<"You want to try again? (y/n)";
-  cin>>a;
-
- if (a =='y'){
-    return 0;
+BigInteger factorial (BigInteger n){
+  if (n < 0){
+    return -1;
+  }
+  if (n==0){
+    return 1;
   }
   else {
-    cout<<"Thank you for playing, have a nice day!"<<endl;
+    return n*factorial(n-1);
+  }
+}
+int main(){
+  string x;
+  do{
+    string z;
+    cout << "Dame un numero" << endl;
+    cin >> z;
+    BigInteger y = stringToBigInteger(z);
+    cout << factorial(y) << endl;
+    cout << "Quieres intentar con otro número?"<< endl;
+    cin >> x;
+  } while(x == "yes");
+  if (x == "no"){
+    cout << " Thank you, have a great day! " << endl;
   }
   return 0;
 }
