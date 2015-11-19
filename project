@@ -11,12 +11,12 @@ int main(int argc,char **argv)
 { 
   InitializeMagick(*argv);
   try{
-  int x;
-  cout"Hi, Im a manipulator of images "endl;
+  int a;
+  cout"Processor of images"endl;
   newline();
-  cout"What do you want to do? (press the number in your keyboard) "endl;
+  cout"What to do? (press the number) "endl;
   newline();
-  cout"1. Rezise the image to one half of its original size"endl;
-  cout"2. Switch to black and white"endl;
+  cout"1. Reduce the image to one half"endl;
+  cout"2. Black and white"endl;
   newline();
   cin>>x;
