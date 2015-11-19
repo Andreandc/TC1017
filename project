@@ -1,0 +1,22 @@
+#include 
+#include 
+using namespace std; 
+using namespace Magick;
+
+void newline(){
+  coutendl;
+}
+
+int main(int argc,char **argv) 
+{ 
+  InitializeMagick(*argv);
+  try{
+  int x;
+  cout"Hi, Im a manipulator of images "endl;
+  newline();
+  cout"What do you want to do? (press the number in your keyboard) "endl;
+  newline();
+  cout"1. Rezise the image to one half of its original size"endl;
+  cout"2. Switch to black and white"endl;
+  newline();
+  cin>>x;
