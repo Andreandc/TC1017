@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+float babilonic(float n){
+float first_guess= (1.0+n)/2.0;
+float difference = 0.001;
+float second_guess;
+float rest = 1.0;
+
+while(rest > difference){
+
+second_guess = first_guess;
+first_guess = (first_guess + (n/first_guess))/2.0;
+rest = second_guess - first_guess;
+
+}
+  return first_guess;
+}
+
+int main(){
+  float n;
+  cout<< "Give me a number to calculate the square root: " << endl;
+  cin>>n;
+
+  cout<< "The square root is: " <<baby(n)<< " , thank you." << endl;
+  return 0;
+}
