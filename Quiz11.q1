@@ -1,0 +1,32 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int repetition=1;
+float CalculateE(float x){
+
+if (x>=1) return 2;
+float difference=1;
+float value=0;
+float factorial;
+
+while (difference>x){
+factorial=1;
+    for (int a=1; a<repetition; a++)
+    {factorial=factorial*a;
+    }
+
+value = value + (1/factorial);
+difference= (1/factorial);
+repetition++;
+}
+return value;
+}
+
+int main(){
+float accuracy;
+cout << "The accuracy of e is: ";
+cin >> accuracy;
+cout << "The result is: " << setprecision(repetition)<< CalculateE(accuracy);
+return 0;
+}
