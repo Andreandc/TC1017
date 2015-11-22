@@ -34,4 +34,5 @@ string filen;
 cout << "Put the name of the file: ";
 getline(cin, filen);
 cout << "The number of times that bananas is written is: " << checkBanana(filen)<< endl;
+return 0;
 }
