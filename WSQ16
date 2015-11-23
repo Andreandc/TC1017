@@ -5,7 +5,7 @@
 using namespace std;
 
 int main (){
-  string Read;
+  string read;
   string mid_price;
   string city_mpg;
   string high_mpg;
