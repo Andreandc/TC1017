@@ -1,22 +1,39 @@
-#include 
-#include 
-using namespace std; 
+#include <Magick++.h>
+#include <iostream>
+#include <cmath>
+using namespace std;
 using namespace Magick;
-
-void newline(){
-  coutendl;
-}
-
-int main(int argc,char **argv) 
-{ 
-  InitializeMagick(*argv);
-  try{
-  int a;
-  cout"Processor of images"endl;
-  newline();
-  cout"What to do? (press the number) "endl;
-  newline();
-  cout"1. Reduce the image to one half"endl;
-  cout"2. Black and white"endl;
-  newline();
-  cin>>x;
+ 
+void grayscale (){
+  Image image;
+  image.read( "Hi.JPG" );
+  int w = image.rows();
+  int h = image.columns();
+  cout << "image size " << w << "x" << h << endl;
+ 
+  Color image_array [w] [h];
+  Color image_array2 [w] [h];
+  Color myfirst;
+  Color second;
+  Color newRGB;
+  Color newRGB2;
+  int g;
+  int gr;
+ 
+  for (int i=0; i < w; i++){
+        for (int u = 0; u < h; u++){
+              myfirst = image.pixelColor(u,i);
+              image_array [i][u] = myfirst;
+        }
+  }
+ 
+   for (int i=0; i < w; i++){
+        for (int u = 0; u < h; u++){
+              second = image_array [i] [u];
+              g = (second.redQuantum()+second.greenQuantum()+second.blueQuantum())/3;
+              newRGB.redQuantum(g);
+              newRGB.greenQuantum(g);
+              newRGB.blueQuantum(g);
+              image_array2 [i] [u] = newRGB;
+        }
+   }
